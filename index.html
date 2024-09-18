@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namma Weather</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Logo with Link to Home -->
+    <div class="logo">
+        <a href="#" onclick="showHome()" style="text-decoration: none; color: inherit;">
+            <h1>🌞☁️ Namma Weather ☀️🌧️</h1>
+        </a>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="#" onclick="showHome()">Home</a></li>
+            <li class="nav-item"><a href="#" onclick="showAbout()">About</a></li>
+            <li class="nav-item">
+                <a href="https://github.com/kishan9535">Contributors</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div id="home" class="container">
+        <header>
+            <div class="homepage">
+                <h1 class="landing-text">Namma Weather</h1>
+                <p class="landing-text-2">Where Is The Sun? Is It Above Or Below The Clouds?</p>
+            </div>
+        </header>
+
+        <!-- Search Form -->
+        <div class="form">
+            <input id="input" type="text" placeholder="Enter a city name" />
+            <button id="button" class="button" onclick="getWeather()">GO</button>
+            <button id="location-button" class="button" onclick="getLocationWeather()">Use My Location</button>
+        </div>
+
+        <!-- Weather Result -->
+        <div class="result-container">
+            <div id="loader" class="loader"></div>
+            <div id="result" class="result-box" style="display: none">
+                <h2 id="city-name"></h2>
+                <p id="weather-desc"></p>
+                <p><strong>Temperature:</strong> <span id="temperature"></span>°C</p>
+                <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+                <p><strong>Wind Speed:</strong> <span id="wind-speed"></span> km/h</p>
+            </div>
+        </div>
+
+        <!-- Hourly Weather Chart -->
+        <div id="hourly-chart-container" style="display: none">
+            <canvas id="hourlyChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="about-section" style="display: none">
+        <h3>About Namma Weather</h3>
+        <p>Namma Weather is an innovative web application designed to provide users with quick and accurate weather updates for their chosen cities...</p>
+        <h3>Features</h3>
+        <ul>
+            <li>Real-time weather data for any city around the world.</li>
+            <li>User-friendly interface with a simple search functionality.</li>
+            <li>Hourly temperature forecasts to help you plan your day.</li>
+            <li>Interactive charts for visualizing weather trends.</li>
+            <li>Location-based weather updates using geolocation.</li>
+        </ul>
+        <h3>Tools and Technologies</h3>
+        <p>The Namma Weather website was built using the following tools and technologies:</p>
+        <ul>
+            <li><strong>HTML5</strong> - For the structure of the website.</li>
+            <li><strong>CSS3</strong> - For styling and layout.</li>
+            <li><strong>JavaScript</strong> - For interactive features and dynamic content.</li>
+            <li><strong>Chart.js</strong> - For displaying the hourly weather chart.</li>
+            <li><strong>OpenWeatherMap API</strong> - For fetching weather data.</li>
+        </ul>
+        <h3>Get Involved</h3>
+        <p>We welcome contributions from the community! If you have suggestions, bug reports, or wish to contribute to the project, please visit our <a href="https://github.com/kishan9535" target="_blank">GitHub repository</a>.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/KISHANKUMA46801" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/kishan.kumar17/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/kishan-kumar-n-855058234/?originalSubdomain=in" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/kishan9535" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://leetcode.com/kishan9535/" target="_blank"><i class="fab fa-leetcode"></i></a>
+        </div>
+        <p>&copy; <span id="copyrightYear"></span> Namma Weather™</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
